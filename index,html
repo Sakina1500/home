@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futbol Taktika Menejeri</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <h2 id="team-name-display">O'zbekiston</h2>
+                <p>3-4-2-1 Sxemasi — Maksimal 11 ta o'yinchi</p>
+            </div>
+            <div class="buttons">
+                <button id="btn-edit-team" class="btn-edit" onclick="openTeamModal()">Jamoani tahrirlash</button>
+                <button id="btn-open-add-modal" class="btn-add" onclick="openAddPlayerModal()">O'yinchi qo'shish</button>
+            </div>
+        </div>
+
+        <div class="football-pitch" id="pitch">
+            <div class="penalty-area-top"></div>
+            <div class="goal-area-top"></div>
+            <div class="penalty-area-bottom"></div>
+            <div class="goal-area-bottom"></div>
+            <div class="formation-badge">3-4-2-1</div>
+        </div>
+    </div>
+    <div id="team-modal" class="modal">
+        <div class="modal-content">
+            <h3>Jamoa nomini tahrirlash</h3>
+            <input type="text" id="input-team-name" placeholder="Jamoa nomi">
+            <div class="modal-actions">
+                <button id="btn-close-team" class="btn-cancel" onclick="closeTeamModal()">Yopish</button>
+                <button id="btn-save-team" class="btn-save" onclick="handleSaveTeam()">Saqlash</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="player-modal" class="modal">
+        <div class="modal-content">
+            <h3 id="modal-title">Yangi o'yinchi qo'shish</h3>
+            <input type="hidden" id="input-player-id">
+            
+            <label>Ismi:</label>
+            <input type="text" id="input-player-name" required>
+            
+            <label>Raqami:</label>
+            <input type="number" id="input-player-number" required>
+            
+            <label>Pozitsiyasi:</label>
+            <select id="select-player-position">
+                <option value="st">st — Hujumchi</option>
+                <option value="am-left">am-left — Hujumchi yarim himoyachi (Chap)</option>
+                <option value="am-right">am-right — Hujumchi yarim himoyachi (O'ng)</option>
+                <option value="cm-left">cm-left — Yarim himoyachi (Chap)</option>
+                <option value="cm-center-left">cm-center-left — Yarim himoyachi (Markaz chap)</option>
+                <option value="cm-center-right">cm-center-right — Yarim himoyachi (Markaz o'ng)</option>
+                <option value="cm-right">cm-right — Yarim himoyachi (O'ng)</option>
+                <option value="cb-left">cb-left — Himoyachi (Chap)</option>
+                <option value="cb-center">cb-center — Himoyachi (Markaz)</option>
+                <option value="cb-right">cb-right — Himoyachi (O'ng)</option>
+                <option value="gk">gk — Darvozabon</option>
+            </select>
+            
+            <label>Avatar URL:</label>
+            <input type="text" id="input-player-avatar" placeholder="https://...">
+            
+            <label>Klub Logotipi URL:</label>
+            <input type="text" id="input-player-club" placeholder="https://...">
+
+            <div class="modal-actions">
+                <button id="btn-delete-player" class="btn-danger hidden" onclick="handleDeletePlayer()">O'chirish</button>
+                <button id="btn-close-player" class="btn-cancel" onclick="closePlayerModal()">Yopish</button>
+                <button id="btn-save-player" class="btn-save" onclick="handleSavePlayer()">Saqlash</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
