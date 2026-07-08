@@ -1,0 +1,81 @@
+// //exercise-1
+// for (let i = 1; i <= 30; i++) {
+//     if (i%3 === 0 && i%5 === 0) {
+//         console.log("FizzBuzz");
+//     } else if(i%3 === 0){
+//         console.log("Fizz");
+        
+//     } else if(i%5 === 0) {
+//         console.log("Buzz");
+        
+//     } else {
+//         console.log(i);
+        
+//     }
+// }
+
+// //exercise-2
+// const person = {
+//   name: "Ali",
+//   age: 25,
+//   city: "Toshkent",
+//   married: false
+// };
+// for (const key in person) {
+//     if (typeof person[key] === 'string') {
+//         console.log(`${key}: ${person[key]}`);
+        
+//     }
+// }
+
+
+// //exercise-3
+// const users =[
+//   { name: "Sara", active: true },
+//   { name: "Bob", active: false },
+//   { name: "Tom", active: true }
+// ];
+
+// const filteredUser = users.filter(user => user.active)
+// console.log(filteredUser);
+
+// //exercise-4
+// const nums = [1, 2, 3, 4, 5];
+// const doubledNumbers = nums.map(num => num*num)
+// const filteredNumbers = doubledNumbers.filter(value => value%2 === 0)
+// console.log(filteredNumbers);
+
+//exercise-5
+// const keys = ['name', 'age']
+// const values = ['Ali', 25];
+// const addArray= Object.fromEntries(keys, values)
+// console.log(addArray);
+// //davomini qilish kerak
+
+// //exercise-6
+// const sentence = "JavaScript is fun to learn."
+// const length = sentence.split(" ").length;
+// console.log(length);
+
+// //EXERCISE-7
+// const email = "user@example.com"
+// const isEmail = email.includes("@") && email.includes(".");
+// console.log(isEmail);
+
+// //exercise-8
+// const string = "level";
+// const reverseString = string.split(" ").reverse().join(" ")
+// console.log(string, reverseString);
+
+// //exercise-9
+// const input = "JavaScript is amazing";
+// const result = input.replaceAll("a", "@");
+// console.log(result);
+
+//exercise-10
+const start = new Date("2025-01-07")
+const end = new Date("2025-01-22");
+const diff =  end - start
+const days = diff /  (1000 * 60 * 60 * 24);
+console.log(days);
+
